@@ -11,18 +11,28 @@ let ext = chrome.runtime.getURL("images/gownoTwoje.png");
 
 // console.log(ext);
 // console.log(document.body.style.cursor);
-document.body.style.cursor = "none";
+let allElements = document.querySelectorAll("*");
 let img = document.createElement("img");
-img.src = ext;
-img.style.height = "100px";
-// img.width = "20px";
-img.style.position = "fixed";
-img.style.transform = "translate(-50%,-50%) rotate(-45deg)";
-document.body.appendChild(img);
-window.addEventListener("mousemove", (e) => {
-	img.style.top = e.clientY + "px";
-	img.style.left = e.clientX + "px";
+allElements.forEach((element) => {
+	if (element.style.cursor != "pointer") {
+		element.style.cursor = "none";
+		img.src = ext;
+		img.style.height = "100px";
+		img.style.zIndex = "1000";
+		// img.width = "20px";
+		img.style.position = "fixed";
+		img.style.transform = "translate(-50%,-50%) rotate(-45deg)";
+		document.body.appendChild(img);
+		window.addEventListener("mousemove", (e) => {
+			img.style.top = e.clientY + "px";
+			img.style.left = e.clientX + "px";
 
-	// console.log(e.clientX);
-	// console.log();
+			// console.log(e.clientX);
+			// console.log();
+		});
+	} else {
+		img.style.display = "none";
+	}
 });
+
+document.body.style.cursor = "none";
