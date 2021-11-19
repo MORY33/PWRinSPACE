@@ -1,26 +1,16 @@
 
-// document.querySelector('body').style.cursor = 'url(https://upload.wikimedia.org/wikipedia/commons/b/b4/Samoyede_Nauka_2003-07_asb_PICT1895_small.JPG)';
-// // 'url(/images/gownoTwoje.cur)'
-// chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
-//     let url = tabs[0].url;
-//     // use `url` here inside the callback because it's asynchronous!
-// });
+let img = chrome.runtime.getURL('images/kursordobry.gif');
+document.querySelector("html").style.cursor = `url("${img}"), auto`;
 
 
-let ext = chrome.runtime.getURL("images/gownoDobre.gif");
 
-// document.querySelector("*").style.cursor = `url("${ext}")`;
+// let lights = document.createElement("div");
+// lights.innerHTML = "<img src='https://clipart.info/images/ccovers/1509727028Christmas-Lights-PNG-Free-Download.png'>";
+// lights.style.position = "fixed";
+// lights.style.top = '-180px';
+// lights.style.left = '-200px';
+// lights.style.width="100%";
+// lights.style.zIndex ='1000';
 
-// console.log(ext);
-// console.log(document.body.style.cursor);
-
-
-document.body.style.cursor = "none";
-let img = document.createElement("img");
-img.style.position = "fixed";
-img.style.top = window.event.clientY;
-img.style.left = window.event.clientX;
-img.style.transform = "translate(-50%,-50%)";
-
-document.body.appendChild(img);
-
+// // myDiv = document.querySelector('body');
+// document.body.appendChild(lights);

@@ -9,13 +9,14 @@
 		}
 	],
     "manifest_version": 3,
-    "permissions": ["storage", "tabs"],
+    "permissions": ["storage", "tabs", "activeTab"],
     "action": {
-        "default_popup": "popup.html"
-        
+        "default_popup": "popup.html",
+        "default_icon": "kursordobry.gif"
     },
+    
     "web_accessible_resources": [{
         "matches": ["<all_urls>"],
-        "resources": ["images/gownoDobre.gif"]
+        "resources": ["images/*.*"]
     }]
 }
